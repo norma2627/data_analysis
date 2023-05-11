@@ -14,6 +14,10 @@ df_covid = df_covid.rename(
     columns={'Date_reported':'日付', 'New_cases':'感染者数', 'New_deaths':'死亡者数'})
 
 st.header('コロナによる影響')
+st.subheader('データの選択方法')
+st.info('国の選択でデータを見たい国を選択してください')
+st.text('\n')
+
 # 国を選択
 option = st.selectbox(
     '国の選択',
@@ -31,8 +35,8 @@ def plot_new_covid_cases_and_deaths_by_country(df, country):
     df_c['日付'] = pd.to_datetime(df_c['日付'])
 
     fig, ax = plt.subplots(2, figsize=(20, 8))
-    ax[0].plot(df_c['日付'], df_c['感染者数'])
-    ax[1].plot(df_c['日付'], df_c['死亡者数'], color='orange')
+    ax[0].plot(df_c['日付'], df_c['感染者数'], color='blue')
+    ax[1].plot(df_c['日付'], df_c['死亡者数'], color='red')
     return fig
 
 
