@@ -39,6 +39,9 @@ def plot_new_covid_cases_and_deaths_by_country(df, country):
     ax[1].plot(df_c['日付'], df_c['死亡者数'], color='red')
     return fig
 
+st.text('感染者数のグラフ:青')
+st.text('死亡者数のグラフ:赤')
+st.text('\n')
 
 st.write(plot_new_covid_cases_and_deaths_by_country(df_covid[df_covid['Country']==option], option))
 
